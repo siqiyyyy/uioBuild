@@ -1,0 +1,20 @@
+diff --git a/uhal/uhal/src/common/ClientFactory.cpp b/uhal/uhal/src/common/ClientFactory.cpp
+index 77e601c..abbb287 100644
+--- a/uhal/uhal/src/common/ClientFactory.cpp
++++ b/uhal/uhal/src/common/ClientFactory.cpp
+@@ -42,6 +42,7 @@
+ #include "uhal/ProtocolControlHub.hpp"
+ #include "uhal/ProtocolMmap.hpp"
+ #include "uhal/ProtocolPCIe.hpp"
++#include "uhal/ProtocolUIO.hpp"
+ 
+ 
+ 
+@@ -79,6 +80,7 @@ namespace uhal
+       mInstance->add< PCIe > ( "ipbuspcie-2.0" , "Direct access to hardware via PCIe, using IPbus version 2.0" );
+       mInstance->add< Mmap > ( "ipbusmmap-2.0" , "Direct access to hardware via mmap, using IPbus version 2.0" );
+       // ---------------------------------------------------------------------
++      mInstance->add< UIO > ( "uioaxi-1.0" , "Direct access to hardware on AXI bus without IPbus" );
+ 
+     }
+ 
